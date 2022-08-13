@@ -1,4 +1,5 @@
 let turn = 'X'
+let isgameover=false;
 let boxes = document.getElementsByClassName('box')
 let resetbtn = document.getElementById('reset')
 let color = document.querySelector('#colorpicker');
@@ -10,10 +11,9 @@ const reset = ()=>{
   document.getElementsByClassName('info')[0].innerText= "Turn for "+ turn;
   document.querySelector(".line").style.width = '0';
   document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0"; 
-
+  isgameover=false;
 }
 
-let isgameover=false;
 Array.from(boxes).forEach((element)=>{
   let boxtext = element.querySelector('.boxtext');
   element.addEventListener('click',()=>{
